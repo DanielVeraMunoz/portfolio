@@ -33,7 +33,6 @@ const { projects } = info;
                 muted
                 loop
                 playsinline
-                autoplay
                 preload="auto"
               />
             ) : project.image ? (
@@ -125,33 +124,38 @@ const { projects } = info;
 </section>
 
 <script>
-  // Handle videos - autoplay on load, restart on visibility
-  document.querySelectorAll('.project-video').forEach(video => {
-    const videoEl = video as HTMLVideoElement;
+  const isMobile = !window.matchMedia('(hover: hover)').matches;
 
-    // Try to play when loaded
-    videoEl.addEventListener('loadeddata', () => {
-      videoEl.play().catch(() => {});
-    });
+  document.querySelectorAll('.project-card').forEach(card => {
+    const video = card.querySelector('.project-video') as HTMLVideoElement;
+    if (!video) return;
 
-    // Also try to play immediately
-    videoEl.play().catch(() => {});
-  });
+    if (isMobile) {
+      // Mobile: tap to play/pause only this video
+      card.addEventListener('click', (e) => {
+        // Don't trigger if clicking on links
+        if ((e.target as HTMLElement).closest('a')) return;
 
-  // Desktop: pause/play on hover for better UX
-  if (window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('.project-card').forEach(card => {
-      const video = card.querySelector('.project-video') as HTMLVideoElement;
-      if (!video) return;
+        if (video.paused) {
+          // Pause all other videos first
+          document.querySelectorAll('.project-video').forEach(v => {
+            if (v !== video) (v as HTMLVideoElement).pause();
+          });
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    } else {
+      // Desktop: hover to play
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
 
       card.addEventListener('mouseleave', () => {
         video.pause();
         video.currentTime = 0;
       });
-
-      card.addEventListener('mouseenter', () => {
-        video.play().catch(() => {});
-      });
-    });
-  }
+    }
+  });
 </script>
