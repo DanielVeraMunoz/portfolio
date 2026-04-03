@@ -26,15 +26,25 @@ const { projects } = info;
           <!-- Project Media -->
           <div class="relative h-52 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
             {project.video ? (
-              <video
-                src={project.video}
-                poster={project.image || undefined}
-                class="project-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                muted
-                loop
-                playsinline
-                preload="auto"
-              />
+              <>
+                <video
+                  src={project.video}
+                  poster={project.image || undefined}
+                  class="project-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                />
+                <!-- Play button overlay -->
+                <div class="play-button absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div class="p-4 bg-dark/70 rounded-full backdrop-blur-sm">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </>
             ) : project.image ? (
               <img
                 src={project.image}
@@ -123,12 +133,29 @@ const { projects } = info;
   </div>
 </section>
 
+<style>
+  .play-button {
+    transition: opacity 0.3s ease;
+  }
+</style>
+
 <script>
   const isMobile = !window.matchMedia('(hover: hover)').matches;
 
   document.querySelectorAll('.project-card').forEach(card => {
     const video = card.querySelector('.project-video') as HTMLVideoElement;
+    const playBtn = card.querySelector('.play-button') as HTMLElement;
     if (!video) return;
+
+    // Hide/show play button based on video state
+    const updatePlayButton = () => {
+      if (playBtn) {
+        playBtn.style.opacity = video.paused ? '1' : '0';
+      }
+    };
+
+    video.addEventListener('play', updatePlayButton);
+    video.addEventListener('pause', updatePlayButton);
 
     if (isMobile) {
       // Mobile: tap to play/pause only this video
