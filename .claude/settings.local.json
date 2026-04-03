@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version)",
+      "Bash(npm --version:*)",
+      "WebSearch",
+      "Bash(git clone:*)",
+      "Bash(npx skills add anthropics/claude-code --skill frontend-design)",
+      "Bash(npx skills add:*)",
+      "Bash(npm create:*)",
+      "Bash(npx astro add:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(gh auth:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

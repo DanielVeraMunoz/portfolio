@@ -1,0 +1,96 @@
+---
+import info from '../data/info.json';
+
+const { experience } = info;
+---
+
+<section id="experience" class="py-20 bg-dark-light/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Mi <span class="gradient-text">Experiencia</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Proyectos y trabajos en los que he participado
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-primary via-secondary to-primary"></div>
+
+      <!-- Experience Items -->
+      <div class="space-y-12">
+        {experience.map((exp, index) => (
+          <div
+            class={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+          >
+            <!-- Timeline dot -->
+            <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-dark animate-pulse-glow z-10"></div>
+
+            <!-- Content Card -->
+            <div class={`reveal ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+              <div class="glass rounded-2xl p-6 card-hover">
+                <!-- Header -->
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-light">{exp.title}</h3>
+                    <p class="text-primary font-medium">{exp.company}</p>
+                  </div>
+                  <span class="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">
+                    {exp.period}
+                  </span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-gray-400 mb-4">{exp.description}</p>
+
+                <!-- Highlights -->
+                <ul class="space-y-2 mb-4">
+                  {exp.highlights.slice(0, 4).map(highlight => (
+                    <li class="flex items-start gap-2 text-gray-300 text-sm">
+                      <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <!-- Tech Stack -->
+                <div class="flex flex-wrap gap-2">
+                  {exp.tech.map(tech => (
+                    <span class="px-2 py-1 bg-dark text-gray-400 text-xs rounded-md">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Education at the end -->
+      <div class="relative flex items-center md:flex-row mt-12">
+        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-dark z-10"></div>
+        <div class="reveal ml-8 md:ml-0 md:w-1/2 md:pr-12">
+          <div class="glass rounded-2xl p-6 card-hover border border-secondary/30">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-2xl">🎓</span>
+              <div>
+                <h3 class="text-xl font-bold text-light">Bootcamp Fullstack PHP</h3>
+                <p class="text-secondary font-medium">IT Academy • 2025 - 2026</p>
+              </div>
+            </div>
+            <p class="text-gray-400">
+              Formación intensiva en desarrollo web fullstack con PHP, Laravel, MySQL, MongoDB, principios SOLID y patrones de diseño.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

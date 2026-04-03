@@ -1,0 +1,71 @@
+---
+import info from '../data/info.json';
+
+const { skills } = info;
+
+const skillCategories = [
+  { key: 'backend', title: 'Backend', icon: '⚙️' },
+  { key: 'frontend', title: 'Frontend', icon: '🎨' },
+  { key: 'databases', title: 'Bases de Datos', icon: '🗄️' },
+  { key: 'tools', title: 'Herramientas', icon: '🛠️' },
+  { key: 'ai', title: 'IA & Desarrollo Asistido', icon: '🤖' },
+];
+---
+
+<section id="skills" class="py-20 bg-dark-light/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+        Mis skills
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Tecnologías y herramientas con las que trabajo
+      </p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((category, categoryIndex) => (
+        skills[category.key] && skills[category.key].length > 0 && (
+          <div
+            class="reveal glass rounded-2xl p-6 card-hover"
+            style={`animation-delay: ${categoryIndex * 0.1}s`}
+          >
+            <!-- Category Header -->
+            <div class="flex items-center gap-3 mb-5">
+              <span class="text-2xl">{category.icon}</span>
+              <h3 class="text-lg font-bold text-light">{category.title}</h3>
+            </div>
+
+            <!-- Skills Icons Grid -->
+            <div class="flex flex-wrap gap-3">
+              {skills[category.key]?.map((skill) => (
+                <div
+                  class="group flex items-center gap-2 px-3 py-2 bg-dark rounded-lg hover:bg-primary/20 transition-all cursor-default"
+                  title={skill.name}
+                >
+                  <span class="text-gray-300 text-sm font-medium group-hover:text-primary transition-colors">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      ))}
+    </div>
+
+    <!-- Additional Tags -->
+    <div class="mt-12 reveal">
+      <h4 class="text-center text-gray-500 text-sm mb-6">También trabajo con:</h4>
+      <div class="flex flex-wrap justify-center gap-2">
+        {['MVC', 'POO', 'Composer', 'Gitflow', 'Clean Code', 'Responsive Design'].map(tag => (
+          <span class="px-3 py-1 text-gray-400 text-sm border border-gray/30 rounded-full hover:border-primary/50 hover:text-gray-300 transition-colors cursor-default">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
