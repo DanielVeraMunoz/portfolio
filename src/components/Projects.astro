@@ -28,11 +28,13 @@ const { projects } = info;
             {project.video ? (
               <video
                 src={project.video}
+                poster={project.image || undefined}
                 class="project-video w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                autoplay
+                preload="auto"
               />
             ) : project.image ? (
               <img
@@ -123,20 +125,33 @@ const { projects } = info;
 </section>
 
 <script>
-  // Play video on hover over the entire card
-  document.querySelectorAll('.project-card').forEach(card => {
-    const video = card.querySelector('.project-video') as HTMLVideoElement;
-    if (!video) return;
+  // Handle videos - autoplay on load, restart on visibility
+  document.querySelectorAll('.project-video').forEach(video => {
+    const videoEl = video as HTMLVideoElement;
 
-    card.addEventListener('mouseenter', () => {
-      video.play().catch(() => {
-        // Autoplay blocked, ignore silently
+    // Try to play when loaded
+    videoEl.addEventListener('loadeddata', () => {
+      videoEl.play().catch(() => {});
+    });
+
+    // Also try to play immediately
+    videoEl.play().catch(() => {});
+  });
+
+  // Desktop: pause/play on hover for better UX
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.project-card').forEach(card => {
+      const video = card.querySelector('.project-video') as HTMLVideoElement;
+      if (!video) return;
+
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
       });
     });
-
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  });
+  }
 </script>
