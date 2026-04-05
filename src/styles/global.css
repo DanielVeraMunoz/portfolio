@@ -110,6 +110,11 @@ html {
 /* Reveal animation - hidden by default to prevent flash */
 .reveal {
   opacity: 0;
+  visibility: hidden;
+}
+
+.reveal.animate-fade-in {
+  visibility: visible;
 }
 
 /* Card hover effect */

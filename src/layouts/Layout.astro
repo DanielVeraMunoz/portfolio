@@ -43,6 +43,11 @@ const siteUrl = "https://danielvera.dev";
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 
     <title>{title}</title>
+
+    <!-- Critical CSS to prevent flash -->
+    <style>
+      .reveal { opacity: 0; visibility: hidden; }
+    </style>
   </head>
   <body class="bg-dark text-light font-sans antialiased overflow-x-hidden">
     <slot />
