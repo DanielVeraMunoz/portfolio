@@ -107,14 +107,16 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Reveal animation - hidden by default to prevent flash */
+/* Reveal animation - hidden by default, transition when visible */
 .reveal {
   opacity: 0;
-  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.reveal.animate-fade-in {
-  visibility: visible;
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Card hover effect */
