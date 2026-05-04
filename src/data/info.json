@@ -22,14 +22,17 @@
       { "name": "Laravel", "icon": "laravel" },
       { "name": "API REST", "icon": "api" },
       { "name": "Eloquent ORM", "icon": "database" },
-      { "name": "Breeze", "icon": "auth" },
-      { "name": "Passport", "icon": "passport" }
+      { "name": "Passport", "icon": "passport" },
+      { "name": "PHPUnit", "icon": "phpunit" },
+      { "name": "Scribe", "icon": "docs" }
     ],
     "frontend": [
       { "name": "HTML5", "icon": "html" },
       { "name": "CSS3", "icon": "css" },
       { "name": "TailwindCSS", "icon": "tailwind" },
-      { "name": "Blade", "icon": "blade" }
+      { "name": "Blade", "icon": "blade" },
+      { "name": "React", "icon": "react" },
+      { "name": "Vite", "icon": "vite" }
     ],
     "databases": [
       { "name": "MySQL", "icon": "mysql" },
@@ -38,13 +41,9 @@
     "tools": [
       { "name": "Git", "icon": "git" },
       { "name": "GitHub", "icon": "github" },
+      { "name": "Docker", "icon": "docker" },
       { "name": "VS Code", "icon": "vscode" },
       { "name": "XAMPP", "icon": "server" }
-    ],
-    "ai": [
-      { "name": "Claude Code", "icon": "claude" },
-      { "name": "OpenCode", "icon": "opencode" },
-      { "name": "Stitch", "icon": "stitch" }
     ]
   },
   "education": [
@@ -57,20 +56,31 @@
   ],
   "projects": [
     {
-      "title": "API REST",
+      "title": "CorchoApp — Frontend",
+      "subtitle": "React SPA",
+      "description": "Frontend mobile-first para CorchoApp. Estética de tablón de corcho con animaciones spring, efecto typewriter e integración completa con la API REST via Axios. Deploy en Vercel.",
+      "image": null,
+      "video": "/images/corchofront.mp4",
+      "tech": ["React 19", "Vite", "Context API", "Axios", "Vercel"],
+      "github": "https://github.com/DanielVeraMunoz/CorchoAppFront",
+      "demo": null,
+      "featured": true
+    },
+    {
+      "title": "CorchoApp — API REST",
       "subtitle": "Laravel API",
-      "description": "API REST con Laravel 11 y autenticación stateless con Passport (OAuth2). Sistema de roles y tests funcionales con PHPUnit.",
+      "description": "API REST para una app de comunidad de vecinos. Autenticación OAuth2 con Laravel Passport, control de roles admin/user, 56 tests con PHPUnit, documentación automática con Scribe y contenerización con Docker. Deploy en Railway.",
       "image": "/images/api-rest.png",
       "video": null,
-      "tech": ["Laravel 11", "Passport", "PHPUnit", "Pest"],
+      "tech": ["Laravel 11", "Passport", "PHPUnit", "Scribe", "Docker", "Railway"],
       "github": "https://github.com/DanielVeraMunoz/CorchoAppApi",
       "demo": null,
       "featured": true
     },
     {
-      "title": "Corcho App",
-      "subtitle": "Proyecto Laravel",
-      "description": "Aplicación web MVC con autenticación y registro de usuarios (Laravel Breeze). Modelado de base de datos, migraciones y Eloquent ORM.",
+      "title": "CorchoApp — MVC",
+      "subtitle": "Laravel MVC",
+      "description": "Versión web MVC de CorchoApp con autenticación y registro de usuarios (Laravel Breeze). Modelado de base de datos, migraciones y Eloquent ORM.",
       "image": "/images/corcho-thumb.jpg",
       "video": "/images/corcho.mp4",
       "tech": ["Laravel", "Breeze", "MySQL", "TailwindCSS", "Blade"],
@@ -85,7 +95,7 @@
       "image": "/images/todo-thumb.jpg",
       "video": "/images/todo-app.mp4",
       "tech": ["PHP", "MVC", "MySQL", "TailwindCSS"],
-      "github": "https://github.com/francobrida/S3-03",
+      "github": "https://github.com/DanielVeraMunoz/to-do",
       "demo": null,
       "featured": true
     }
