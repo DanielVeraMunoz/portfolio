@@ -3,47 +3,96 @@
     "name": "Daniel",
     "surname": "Vera",
     "fullName": "Daniel Vera",
-    "title": "Jr Fullstack Developer",
-    "subtitle": "PHP / Laravel",
+    "title": "Software Developer",
+    "subtitle": "PHP · Laravel · React · TypeScript",
     "email": "dani.vmg91@gmail.com",
     "phone": "+34 619 86 53 91",
     "location": "Barcelona, Spain",
     "available": true,
-    "bio": "Desarrollador Fullstack especializado en PHP y Laravel. Vengo del sector gráfico y editorial — más de 10 años entre preimpresión, maquetación y producción de libros — y eso me ha dado una forma de trabajar ordenada, con mucha atención al detalle."
+    "bio": "Desarrollador Fullstack especializado en PHP y Laravel, con experiencia en proyecto colaborativo real. Vengo del sector gráfico y editorial, más de 10 años entre preimpresión, maquetación y producción de libros, y eso me ha dado una forma de trabajar ordenada, con mucha atención al detalle."
   },
   "social": {
     "github": "https://github.com/DanielVeraMunoz",
     "linkedin": "https://linkedin.com/in/danielveramunoz",
     "email": "mailto:dani.vmg91@gmail.com"
   },
+  "experience": [
+    {
+      "title": "Software Developer",
+      "company": "ITA Wiki · Barcelona Activa",
+      "period": "Mayo 2026 - Julio 2026",
+      "description": "Desarrollo fullstack en equipo de 15 personas (Scrum Master, Tech Lead): plataforma wiki colaborativa con metodología ágil (Scrum).",
+      "highlights": [
+        "Frontend con React + TypeScript y Vue 3: componentes, integración REST, tests con Vitest y Testing Library",
+        "Backend con PHP/Laravel y Node.js/Express, arquitectura MVC y Contract-First API; tests con Supertest",
+        "Pipeline CI/CD con GitLab CI; calidad de código con SonarQube, ESLint y Prettier",
+        "Git Flow en GitHub y GitLab con PRs, code reviews y tablero Kanban (GitHub Projects)"
+      ],
+      "tech": ["React", "TypeScript", "Vue 3", "PHP/Laravel", "Node.js", "Express", "GitLab CI", "SonarQube", "Vitest", "Supertest"]
+    },
+    {
+      "title": "Diseñador Editorial",
+      "company": "Freelance · Editorial Cántico · Èter Edicions · Grupo Almuzara",
+      "period": "2021 - actualidad",
+      "description": "Más de 10 años en el sector gráfico y editorial. Maquetación de libros, preimpresión offset y producción de proyectos editoriales de principio a fin.",
+      "highlights": [
+        "Maquetación editorial y preimpresión offset para libros de tirada comercial",
+        "Coordinación de proyectos: gestión de plazos, revisiones y entrega de artes finales",
+        "Trabajo con editoriales como Cántico, Èter Edicions y Grupo Almuzara"
+      ],
+      "tech": ["Adobe InDesign", "Illustrator", "Photoshop", "Acrobat", "Preimpresión offset"]
+    }
+  ],
   "skills": {
     "backend": [
       { "name": "PHP 8+", "icon": "php" },
+      { "name": "OOP", "icon": "oop" },
       { "name": "Laravel", "icon": "laravel" },
       { "name": "API REST", "icon": "api" },
       { "name": "Eloquent ORM", "icon": "database" },
-      { "name": "Passport", "icon": "passport" },
-      { "name": "PHPUnit", "icon": "phpunit" },
-      { "name": "Scribe", "icon": "docs" }
+      { "name": "Passport (OAuth2)", "icon": "passport" },
+      { "name": "Node.js", "icon": "node" },
+      { "name": "Express", "icon": "express" }
     ],
     "frontend": [
+      { "name": "React 19", "icon": "react" },
+      { "name": "Vue 3", "icon": "vue" },
+      { "name": "TypeScript", "icon": "typescript" },
       { "name": "HTML5", "icon": "html" },
-      { "name": "CSS3", "icon": "css" },
       { "name": "TailwindCSS", "icon": "tailwind" },
       { "name": "Blade", "icon": "blade" },
-      { "name": "React", "icon": "react" },
-      { "name": "Vite", "icon": "vite" }
+      { "name": "Axios", "icon": "axios" }
     ],
     "databases": [
       { "name": "MySQL", "icon": "mysql" },
-      { "name": "MongoDB", "icon": "mongodb" }
+      { "name": "MongoDB", "icon": "mongodb" },
+      { "name": "Modelado ERD", "icon": "erd" }
+    ],
+    "testing": [
+      { "name": "PHPUnit", "icon": "phpunit" },
+      { "name": "Vitest", "icon": "vitest" },
+      { "name": "Supertest", "icon": "supertest" },
+      { "name": "Testing Library", "icon": "testing" },
+      { "name": "Scribe", "icon": "docs" }
     ],
     "tools": [
       { "name": "Git", "icon": "git" },
       { "name": "GitHub", "icon": "github" },
+      { "name": "GitLab", "icon": "gitlab" },
       { "name": "Docker", "icon": "docker" },
-      { "name": "VS Code", "icon": "vscode" },
-      { "name": "XAMPP", "icon": "server" }
+      { "name": "ESLint", "icon": "eslint" },
+      { "name": "Prettier", "icon": "prettier" },
+      { "name": "SonarQube", "icon": "sonarqube" },
+      { "name": "Railway", "icon": "railway" },
+      { "name": "Vercel", "icon": "vercel" },
+      { "name": "Claude Code", "icon": "ai" }
+    ],
+    "methodologies": [
+      { "name": "Scrum", "icon": "scrum" },
+      { "name": "Gitflow", "icon": "gitflow" },
+      { "name": "MVC", "icon": "mvc" },
+      { "name": "Clean Code", "icon": "clean" },
+      { "name": "Contract-First API", "icon": "contract" }
     ]
   },
   "education": [
@@ -51,39 +100,40 @@
       "title": "Bootcamp Fullstack PHP",
       "institution": "IT Academy",
       "period": "2025 - 2026",
-      "description": "Desarrollo backend y frontend con PHP, Laravel y bases de datos relacionales"
+      "description": "Formación intensiva en desarrollo web fullstack con PHP, Laravel, React, MySQL, Docker y API REST.",
+      "credential": "Microcredencial universitaria · Universitat Politècnica de Catalunya (UPC BarcelonaTech)"
     }
   ],
   "projects": [
     {
-      "title": "CorchoApp — Frontend",
+      "title": "React SPA · Corcho",
       "subtitle": "React SPA",
       "description": "Frontend mobile-first para CorchoApp. Estética de tablón de corcho con animaciones spring, efecto typewriter e integración completa con la API REST via Axios. Deploy en Vercel.",
       "image": null,
       "video": "/images/corchofront.mp4",
-      "tech": ["React 19", "Vite", "Context API", "Axios", "Vercel"],
-      "github": "https://github.com/DanielVeraMunoz/CorchoAppFront",
-      "demo": null,
+      "tech": ["React 19", "React Router DOM", "Context API", "Axios", "Vercel"],
+      "github": "https://github.com/DanielVeraMunoz/CorchoApiFront",
+      "demo": "https://corcho-api-front.vercel.app/",
       "featured": true
     },
     {
-      "title": "CorchoApp — API REST",
+      "title": "REST API · Corcho",
       "subtitle": "Laravel API",
-      "description": "API REST para una app de comunidad de vecinos. Autenticación OAuth2 con Laravel Passport, control de roles admin/user, 56 tests con PHPUnit, documentación automática con Scribe y contenerización con Docker. Deploy en Railway.",
+      "description": "API REST para una app de comunidad de vecinos. Autenticación OAuth2 con Laravel Passport, control de roles admin/user, tests con PHPUnit, documentación automática con Scribe y contenerización con Docker. Deploy en Railway.",
       "image": "/images/api-rest.png",
       "video": null,
-      "tech": ["Laravel 11", "Passport", "PHPUnit", "Scribe", "Docker", "Railway"],
+      "tech": ["Laravel 11", "Passport (OAuth2)", "PHPUnit", "Scribe", "Docker", "Railway"],
       "github": "https://github.com/DanielVeraMunoz/CorchoAppApi",
       "demo": null,
       "featured": true
     },
     {
-      "title": "CorchoApp — MVC",
+      "title": "Laravel MVC · Corcho",
       "subtitle": "Laravel MVC",
-      "description": "Versión web MVC de CorchoApp con autenticación y registro de usuarios (Laravel Breeze). Modelado de base de datos, migraciones y Eloquent ORM.",
+      "description": "Versión web MVC de CorchoApp con autenticación y registro de usuarios (Laravel Breeze). Modelado de base de datos (MER, FK), migraciones y Eloquent ORM.",
       "image": "/images/corcho-thumb.jpg",
       "video": "/images/corcho.mp4",
-      "tech": ["Laravel", "Breeze", "MySQL", "TailwindCSS", "Blade"],
+      "tech": ["Laravel 11", "Breeze", "MySQL", "TailwindCSS", "Blade"],
       "github": "https://github.com/DanielVeraMunoz/corchoApp",
       "demo": null,
       "featured": true
